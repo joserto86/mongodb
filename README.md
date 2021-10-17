@@ -94,6 +94,30 @@ Para realizar consultas se utiliza el comando `find()` como hemos visto arriba, 
 > db.[collection].find().limit([number]) //Limita el resultado de la búsqueda al número especificado en el parámetro number
 ```
 
-Se puede ver toda la documentación del lenguaje de consultas en el siguiente [enlace]:
+Se puede ver toda la documentación del lenguaje de consultas en el siguiente [enlace]
+
+## Symfony & MongoDB
+
+Para este proyecto de prueba se está utilizando un proyecto esqueleto de symfony al que se le han añadido varias dependencias como:
+
+- `composer config "platform.ext-mongo" "1.6.16" && composer require alcaeus/mongo-php-adapter`
+- `composer config extra.symfony.allow-contrib true`
+- `composer require doctrine/mongodb-odm-bundle`
+- `composer require --dev symfony/maker-bundle`
+- `composer req validation`
+
+Para crear el esquema de bbdd ejecutar el comando:
+
+```
+$ php bin/console doctrine:mongodb:schema:create
+```
+
+Se puede ver la documentación seguida en los siguientes enlaces:
+- [Symfony4 y MongoDB]
+- [Configurar MongoDB en Symfony]
+- [Documentación MongoDBBundle]
 
 [enlace]: <https://docs.mongodb.com/manual/>
+[Symfony4 y MongoDB]: <https://medium.com/@ahmetmertsevinc/symfony-4-and-doctrine-mongo-db-c9ac0f02f742>
+[Configurar MongoDB en Symfony]: <https://medium.com/francisco-ugalde/como-configurar-mongodb-en-symfony-4-d88e96f57aaa>
+[Documentación MongoDBBundle]: <https://www.doctrine-project.org/projects/doctrine-mongodb-bundle/en/4.3/index.html>
